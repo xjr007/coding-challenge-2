@@ -4,65 +4,87 @@
 	box-sizing: border-box;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1440px) {
 	.App {
 		padding: 5rem !important;
 
-		// .slider {
-		// 	.slide {
-		// 		.buttonBox {
-		// 			#button {
-		// 			}
-		// 		}
-		// 	}
-		// }
+		.slider {
+			.buttonBox {
+				width: 88.8% !important;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	.App {
+		padding: 5rem !important;
+
+		.slider {
+			.buttonBox {
+				width: 79% !important;
+			}
+		}
 	}
 }
 
 .App {
+	overflow: hidden;
 	padding: 2rem;
 
 	.slider {
 		z-index: 0;
 		display: flex;
 		align-items: center;
-		border: 1px solid lightblue;
 		width: auto;
 		height: 50vh;
 		background-color: darkslategrey;
+		overflow-x: hidden;
 
 		.slide {
 			z-index: 1;
 			display: relative;
 			border: 1px solid pink;
-			width: 100%;
+			min-width: 100%;
 			height: 80%;
 			background-color: white;
+			overflow: auto;
+		}
 
-			.buttonBox {
-				z-index: 2;
+		.buttonBox {
+			z-index: 2;
+			position: absolute;
+			display: flex;
+			flex-flow: row;
+			height: inherit;
+			width: 82%;
+
+			#button {
+				overflow: auto;
+				z-index: 4;
 				position: relative;
-				border: 1px solid lightgreen;
 				height: 100%;
+				width: 50%;
+				background: transparent;
+				transition-delay: all 0.5s;
+				border: none;
 
-				#button {
-					position: relative;
-					height: 100%;
-					width: 50%;
-					border: 1px solid blueviolet;
-					background: transparent;
-					transition-delay: all 0.5s;
+				&:hover {
+					cursor: pointer;
+				}
 
-					&:hover {
-						cursor: pointer;
-					}
+				.tooltip {
+					position: absolute;
+					z-index: 5;
+					margin-top: -2rem;
+					transition: all 0.5s ease-in-out;
+					border: 2px solid lightsalmon;
+					border-radius: 0;
 
-					.tooltip {
-						margin-top: 1rem;
-						margin-left: 25%;
-						margin-right: 25%;
-						transition: all 0.5s ease-in-out;
-						border: 1px solid lightsalmon;
+					.tooltip-inner {
+						display: flex;
+						padding: 2px;
+						flex-flow: column;
 					}
 				}
 			}

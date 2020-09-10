@@ -5,13 +5,26 @@
           box-sizing: border-box;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1440px) {
   .App {
     padding: 5rem !important;
+  }
+  .App .slider .buttonBox {
+    width: 88.8% !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .App {
+    padding: 5rem !important;
+  }
+  .App .slider .buttonBox {
+    width: 79% !important;
   }
 }
 
 .App {
+  overflow: hidden;
   padding: 2rem;
 }
 
@@ -23,49 +36,71 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid lightblue;
   width: auto;
   height: 50vh;
   background-color: darkslategrey;
+  overflow-x: hidden;
 }
 
 .App .slider .slide {
   z-index: 1;
   display: relative;
   border: 1px solid pink;
-  width: 100%;
+  min-width: 100%;
   height: 80%;
   background-color: white;
+  overflow: auto;
 }
 
-.App .slider .slide .buttonBox {
+.App .slider .buttonBox {
   z-index: 2;
-  position: relative;
-  border: 1px solid lightgreen;
-  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  height: inherit;
+  width: 82%;
 }
 
-.App .slider .slide .buttonBox #button {
+.App .slider .buttonBox #button {
+  overflow: auto;
+  z-index: 4;
   position: relative;
   height: 100%;
   width: 50%;
-  border: 1px solid blueviolet;
   background: transparent;
   -webkit-transition-delay: all 0.5s;
           transition-delay: all 0.5s;
+  border: none;
 }
 
-.App .slider .slide .buttonBox #button:hover {
+.App .slider .buttonBox #button:hover {
   cursor: pointer;
 }
 
-.App .slider .slide .buttonBox #button .tooltip {
-  margin-top: 1rem;
-  margin-left: 25%;
-  margin-right: 25%;
+.App .slider .buttonBox #button .tooltip {
+  position: absolute;
+  z-index: 5;
+  margin-top: -2rem;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  border: 1px solid lightsalmon;
+  border: 2px solid lightsalmon;
+  border-radius: 0;
+}
+
+.App .slider .buttonBox #button .tooltip .tooltip-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
 }
 
 .App .info {

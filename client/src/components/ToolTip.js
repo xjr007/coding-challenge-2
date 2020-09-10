@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const ToolTip = () => {
+const ToolTip = props => {
+	const { slideNo, styles } = props;
+
+	// useEffect(() => {
+	// 	if (position === 'right' || position === 'left') {
+	// 		setStyle({
+	// 			display: 'block',
+	// 			zIndex: '5',
+	// 		});
+	// 	}
+	// 	//es-lint-disable-next-line
+	// }, [setStyle, position]);
 	return (
-		<div className='tooltip'>
-			<h5>tooltip</h5>
+		<div className='tooltip' style={styles}>
+			<div className='tooltip-arrow'></div>
+			<div className='tooltip-inner'>Next slide no.{slideNo}</div>
 		</div>
 	);
 };
