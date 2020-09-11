@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { previous, next } from '../assets/js/NavigationCntrl';
 import ToolTip from './ToolTip';
+import InformationBox from '../layout/InformationBox';
 
-const Slide = () => {
-	// subsitute this array with array of images
-	let slide_arr = [1, 2, 3, 4, 5, 6, 7];
+const Slide = props => {
+	// array of images
+	const { slides } = props;
 
 	// x --> x ref as coordinate and acts as slide counter
 	const [x, setX] = useState(0);
@@ -22,16 +23,16 @@ const Slide = () => {
 		// processes the button selection
 
 		if (nav === 'previous') {
-			previous(setX, setTime, slide_arr, x);
+			previous(setX, setTime, slides, x);
 		}
 		if (nav === 'next') {
-			next(setX, setTime, slide_arr, x);
+			next(setX, setTime, slides, x);
 		}
 	};
 
 	return (
 		<div className='slider'>
-			{slide_arr.map((item, index) => {
+			{slides.map((item, index) => {
 				return (
 					<div
 						key={index}
@@ -41,7 +42,9 @@ const Slide = () => {
 							transition: `${time}s`,
 						}}
 					>
-						{item}
+						<img id='img' src={item.imgURL} alt={'Slide no.' + index} />
+
+						<InformationBox description={item.imgDescription} />
 					</div>
 				);
 			})}
@@ -68,9 +71,7 @@ const Slide = () => {
 						<ToolTip
 							styles={{ left: '5%' }}
 							slideNo={
-								-1 * (x / 100) - 1 < 0
-									? slide_arr.length
-									: -1 * (x / 100)
+								-1 * (x / 100) - 1 < 0 ? slides.length : -1 * (x / 100)
 							}
 						/>
 					)}
@@ -97,7 +98,7 @@ const Slide = () => {
 						<ToolTip
 							styles={{ right: '5%' }}
 							slideNo={
-								-1 * (x / 100) + 2 > slide_arr.length
+								-1 * (x / 100) + 2 > slides.length
 									? 1
 									: -1 * (x / 100) + 2
 							}

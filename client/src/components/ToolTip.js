@@ -6,7 +6,7 @@ const ToolTip = props => {
 	return (
 		<div className='tooltip' style={styles}>
 			<div className='tooltip-arrow'></div>
-			<div className='tooltip-inner'>Slide no.{slideNo}</div>
+			<div className='tooltip-inner'>Go to slide no.{slideNo}</div>
 		</div>
 	);
 };

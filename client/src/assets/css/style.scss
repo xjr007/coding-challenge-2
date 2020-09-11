@@ -6,11 +6,25 @@
 
 @media only screen and (min-width: 1440px) {
 	.App {
-		padding: 5rem !important;
+		overflow: hidden;
+		padding-left: 25rem !important;
+		padding-right: 25rem !important;
 
 		.slider {
+			height: 70vh !important;
 			.buttonBox {
-				width: 88.8% !important;
+				width: 44.5% !important;
+				#button {
+					width: 50% !important;
+					.tooltip {
+						margin-top: 110% !important;
+						z-index: 7 !important;
+					}
+				}
+			}
+
+			#img {
+				height: 70% !important;
 			}
 		}
 	}
@@ -45,9 +59,27 @@
 			z-index: 1;
 			display: relative;
 			min-width: 100%;
-			height: 80%;
+			height: 100%;
 			background-color: white;
 			overflow: auto;
+
+			#img {
+				height: 50%;
+				width: 100%;
+			}
+		}
+
+		.info {
+			margin-left: 0.5rem;
+			margin-right: 0.5rem;
+			position: absolute;
+
+			#description {
+				margin-top: 1.5rem;
+				text-align: justify;
+				word-spacing: 0.1rem;
+				letter-spacing: 0.01rem;
+			}
 		}
 
 		.buttonBox {
@@ -74,38 +106,21 @@
 
 				.tooltip {
 					display: inline-block;
-					position: relative;
+					position: absolute;
 					z-index: 5;
-					margin-top: -2rem;
+					margin-top: 150%;
 					transition: all 0.5s ease-in-out;
-					border: 2px solid lightsalmon;
+
+					color: black;
 
 					.tooltip-inner {
 						&::after {
 							content: ' ';
 							z-index: 6;
-							position: absolute;
-							top: 100%; /* At the bottom of the tooltip */
-							left: 50%;
-							border-width: 5px;
-							border-style: solid;
-							border-color: black transparent transparent transparent;
 						}
 					}
 				}
 			}
-		}
-	}
-
-	.info {
-		margin-left: 0.5rem;
-		margin-right: 0.5rem;
-
-		#description {
-			margin-top: 1.5rem;
-			text-align: justify;
-			word-spacing: 0.1rem;
-			letter-spacing: 0.01rem;
 		}
 	}
 }
