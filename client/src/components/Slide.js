@@ -32,22 +32,27 @@ const Slide = props => {
 
 	return (
 		<div className='slider'>
-			{slides.map((item, index) => {
-				return (
-					<div
-						key={index}
-						className='slide'
-						style={{
-							transform: `translateX(${x}%)`,
-							transition: `${time}s`,
-						}}
-					>
-						<img id='img' src={item.imgURL} alt={'Slide no.' + index} />
+			{x !== 0 &&
+				slides.map((item, index) => {
+					return (
+						<div
+							key={index}
+							className='slide'
+							style={{
+								transform: `translateX(${x}%)`,
+								transition: `${time}s`,
+							}}
+						>
+							<img
+								id='img'
+								src={item.imgURL}
+								alt={'Slide no.' + index}
+							/>
 
-						<InformationBox description={item.imgDescription} />
-					</div>
-				);
-			})}
+							<InformationBox description={item.imgDescription} />
+						</div>
+					);
+				})}
 			<div className='buttonBox'>
 				<button
 					id='button'
