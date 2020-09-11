@@ -1,12 +1,22 @@
-import React from 'react';
-import './App.css';
+import React, { useEffect } from 'react';
+import Slider from './layout/Slider';
+import InformationBox from './layout/InformationBox';
 
-function App() {
+import './assets/css/style.css';
+
+const App = () => {
+	const connectToServer = () => {
+		fetch('/');
+	};
+
+	useEffect(() => {
+		connectToServer();
+	});
 	return (
 		<div className='App'>
-			<h1>Clean App created...</h1>
+			<Slider />
 		</div>
 	);
-}
+};
 
 export default App;

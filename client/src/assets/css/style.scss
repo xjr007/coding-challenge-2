@@ -1,0 +1,126 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1440px) {
+	.App {
+		overflow: hidden;
+		padding-left: 25rem !important;
+		padding-right: 25rem !important;
+
+		.slider {
+			height: 70vh !important;
+			.buttonBox {
+				width: 44.5% !important;
+				#button {
+					width: 50% !important;
+					.tooltip {
+						margin-top: 110% !important;
+						z-index: 7 !important;
+					}
+				}
+			}
+
+			#img {
+				height: 70% !important;
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+	.App {
+		padding: 5rem !important;
+
+		.slider {
+			.buttonBox {
+				width: 79% !important;
+			}
+		}
+	}
+}
+
+.App {
+	overflow: hidden;
+	padding: 2rem;
+
+	.slider {
+		z-index: 0;
+		display: flex;
+		align-items: center;
+		width: auto;
+		height: 50vh;
+		background-color: darkslategrey;
+		overflow-x: hidden;
+
+		.slide {
+			z-index: 1;
+			display: relative;
+			min-width: 100%;
+			height: 100%;
+			background-color: white;
+			overflow: auto;
+
+			#img {
+				height: 50%;
+				width: 100%;
+			}
+		}
+
+		.info {
+			margin-left: 0.5rem;
+			margin-right: 0.5rem;
+			position: absolute;
+
+			#description {
+				margin-top: 1.5rem;
+				text-align: justify;
+				word-spacing: 0.1rem;
+				letter-spacing: 0.01rem;
+			}
+		}
+
+		.buttonBox {
+			z-index: 2;
+			position: absolute;
+			display: flex;
+			flex-flow: row;
+			height: inherit;
+			width: 82%;
+
+			#button {
+				overflow: auto;
+				z-index: 4;
+				position: relative;
+				height: 100%;
+				width: 50%;
+				background: transparent;
+				transition-delay: all 0.5s;
+				border: none;
+
+				&:hover {
+					cursor: pointer;
+				}
+
+				.tooltip {
+					display: inline-block;
+					position: absolute;
+					z-index: 5;
+					margin-top: 150%;
+					transition: all 0.5s ease-in-out;
+
+					color: black;
+
+					.tooltip-inner {
+						&::after {
+							content: ' ';
+							z-index: 6;
+						}
+					}
+				}
+			}
+		}
+	}
+}

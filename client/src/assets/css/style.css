@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1440px) {
+  .App {
+    overflow: hidden;
+    padding-left: 25rem !important;
+    padding-right: 25rem !important;
+  }
+  .App .slider {
+    height: 70vh !important;
+  }
+  .App .slider .buttonBox {
+    width: 44.5% !important;
+  }
+  .App .slider .buttonBox #button {
+    width: 50% !important;
+  }
+  .App .slider .buttonBox #button .tooltip {
+    margin-top: 110% !important;
+    z-index: 7 !important;
+  }
+  .App .slider #img {
+    height: 70% !important;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .App {
+    padding: 5rem !important;
+  }
+  .App .slider .buttonBox {
+    width: 79% !important;
+  }
+}
+
+.App {
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.App .slider {
+  z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: auto;
+  height: 50vh;
+  background-color: darkslategrey;
+  overflow-x: hidden;
+}
+
+.App .slider .slide {
+  z-index: 1;
+  display: relative;
+  min-width: 100%;
+  height: 100%;
+  background-color: white;
+  overflow: auto;
+}
+
+.App .slider .slide #img {
+  height: 50%;
+  width: 100%;
+}
+
+.App .slider .info {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  position: absolute;
+}
+
+.App .slider .info #description {
+  margin-top: 1.5rem;
+  text-align: justify;
+  word-spacing: 0.1rem;
+  letter-spacing: 0.01rem;
+}
+
+.App .slider .buttonBox {
+  z-index: 2;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  height: inherit;
+  width: 82%;
+}
+
+.App .slider .buttonBox #button {
+  overflow: auto;
+  z-index: 4;
+  position: relative;
+  height: 100%;
+  width: 50%;
+  background: transparent;
+  -webkit-transition-delay: all 0.5s;
+          transition-delay: all 0.5s;
+  border: none;
+}
+
+.App .slider .buttonBox #button:hover {
+  cursor: pointer;
+}
+
+.App .slider .buttonBox #button .tooltip {
+  display: inline-block;
+  position: absolute;
+  z-index: 5;
+  margin-top: 150%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  color: black;
+}
+
+.App .slider .buttonBox #button .tooltip .tooltip-inner::after {
+  content: ' ';
+  z-index: 6;
+}
+/*# sourceMappingURL=style.css.map */
