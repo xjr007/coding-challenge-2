@@ -66,7 +66,7 @@ const Slide = () => {
 				>
 					{toolTipHover.hover && toolTipHover.position === 'left' && (
 						<ToolTip
-							styles={{ left: '25%' }}
+							styles={{ left: '5%' }}
 							slideNo={
 								-1 * (x / 100) - 1 < 0
 									? slide_arr.length
@@ -95,7 +95,7 @@ const Slide = () => {
 				>
 					{toolTipHover.hover && toolTipHover.position === 'right' && (
 						<ToolTip
-							styles={{ right: '25%' }}
+							styles={{ right: '5%' }}
 							slideNo={
 								-1 * (x / 100) + 2 > slide_arr.length
 									? 1
